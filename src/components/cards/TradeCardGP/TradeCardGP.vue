@@ -57,7 +57,10 @@
         block
         @click.prevent="handlePreviewButton"
       />
-      <div class="mt-6 text-sm flex items-center">
+      <div
+        class="mt-6 text-sm flex items-center"
+        v-if="isGnosisSupportedNetwork"
+      >
         <BalToggle
           name="tradeGasless"
           :label="$t('tradeGaslessToggle.label')"
@@ -120,6 +123,7 @@ import useWeb3 from '@/services/web3/useWeb3';
 import useRelayerApproval, {
   Relayer
 } from '@/composables/trade/useRelayerApproval';
+import { GP_SUPPORTED_NETWORKS } from '@/services/gnosis/constants';
 
 const { nativeAsset } = configService.network;
 
@@ -284,6 +288,10 @@ export default defineComponent({
       return undefined;
     });
 
+    const isGnosisSupportedNetwork = computed(() =>
+      GP_SUPPORTED_NETWORKS.includes(appNetworkConfig.chainId)
+    );
+
     // METHODS
     function trade() {
       trading.trade(() => {
@@ -364,6 +372,7 @@ export default defineComponent({
       tradeCardShadow,
       handlePreviewButton,
       handlePreviewModalClose,
+      isGnosisSupportedNetwork,
 
       // methods
       trade,
