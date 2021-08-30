@@ -251,8 +251,6 @@
     "totalValue": "Valor total",
     "trade": "Comercio",
     "tradeEarns": "Este comercio te hace ganar",
-    "tradeInterface": "Interfaz comercial",
-    "tradeInterfaceTooltip": "Elija Balancer para obtener la mejor liquidez en los grupos de Balancer V1 y V2. Elija Gnosis para comprar y vender tokens utilizando pedidos sin gas mientras brinda protección MEV.",
     "tradeLiquidity": "Liquidez comercial",
     "tradeSettled": "Tu comercio se ha asentado",
     "tradeSubmissionError": {"title":"Se ha producido un error", "actionLabel":"Despedir"},

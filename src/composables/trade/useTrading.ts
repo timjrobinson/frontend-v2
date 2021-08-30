@@ -1,17 +1,27 @@
-import { computed, Ref, watch } from 'vue';
+import { computed, ref, Ref, watch } from 'vue';
 import { useStore } from 'vuex';
-import { bnum, scale } from '@/lib/utils';
-import useNumbers from '../useNumbers';
+
+import { NATIVE_ASSET_ADDRESS } from '@/constants/tokens';
+import LS_KEYS from '@/constants/local-storage.keys';
+
+import { bnum, lsGet, lsSet, scale } from '@/lib/utils';
+import { getWrapAction, WrapType } from '@/lib/utils/balancer/wrapper';
+
 import useWeb3 from '@/services/web3/useWeb3';
+
+import useNumbers from '../useNumbers';
+
 import useSor from './useSor';
 import useGnosis from './useGnosis';
 import useTokens from '../useTokens';
-import { NATIVE_ASSET_ADDRESS } from '@/constants/tokens';
-import { getWrapAction, WrapType } from '@/lib/utils/balancer/wrapper';
 
 export type TradeRoute = 'wrapUnwrap' | 'balancer' | 'gnosis';
 
 export type UseTrading = ReturnType<typeof useTrading>;
+
+export const tradeGasless = ref<boolean>(
+  lsGet<boolean>(LS_KEYS.Trade.Gasless, true)
+);
 
 export default function useTrading(
   exactIn: Ref<boolean>,
@@ -93,7 +103,11 @@ export default function useTrading(
       return 'wrapUnwrap';
     }
 
-    return isEthTrade.value ? 'balancer' : 'gnosis';
+    if (isEthTrade.value) {
+      return 'balancer';
+    }
+
+    return tradeGasless.value ? 'gnosis' : 'balancer';
   });
 
   const isGnosisTrade = computed(() => tradeRoute.value === 'gnosis');
@@ -178,6 +192,14 @@ export default function useTrading(
         sor.resetState();
       });
     }
+  }
+
+  function toggleTradeGasless() {
+    tradeGasless.value = !tradeGasless.value;
+
+    lsSet(LS_KEYS.Trade.Gasless, tradeGasless.value);
+
+    handleAmountChange();
   }
 
   function resetSubmissionError() {
@@ -271,6 +293,8 @@ export default function useTrading(
     isConfirming,
     submissionError,
     resetSubmissionError,
+    tradeGasless,
+    toggleTradeGasless,
 
     // methods
     getQuote,

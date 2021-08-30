@@ -251,8 +251,6 @@
     "totalValue": "Toplam değer",
     "trade": "Ticaret",
     "tradeEarns": "Bu ticaret seni kazandırır",
-    "tradeInterface": "Ticaret arayüzü",
-    "tradeInterfaceTooltip": "Balancer V1 ve V2 havuzlarında en iyi likidite için Balancer'ı seçin. MEV koruması sağlarken gazsız siparişler kullanarak jeton alıp satmak için Gnosis'i seçin.",
     "tradeLiquidity": "Ticaret likiditesi",
     "tradeSettled": "Ticaretiniz halloldu",
     "tradeSubmissionError": {"title":"bir hata oluştu", "actionLabel":"Azletmek"},

@@ -251,8 +251,6 @@
     "totalValue": "Valore complessivo",
     "trade": "Scambio",
     "tradeEarns": "Questo scambio ti guadagna",
-    "tradeInterface": "Interfaccia commerciale",
-    "tradeInterfaceTooltip": "Scegli Balancer per la migliore liquidità tra i pool Balancer V1 e V2. Scegli Gnosis per acquistare e vendere token utilizzando ordini senza gas fornendo protezione MEV.",
     "tradeLiquidity": "Liquidità commerciale",
     "tradeSettled": "Il tuo affare si è risolto",
     "tradeSubmissionError": {"title":"C'è stato un errore", "actionLabel":"Congedare"},
