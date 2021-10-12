@@ -1,5 +1,4 @@
-name: frontend-v-2
-region: sgp
+name: frontend-v2
 services:
 - envs:
   - key: INFURA_PROJECT_ID
