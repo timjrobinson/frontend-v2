@@ -10,12 +10,7 @@ spec:
       scope: RUN_AND_BUILD_TIME
     - key: BLOCKNATIVE_DAPP_ID
       scope: RUN_AND_BUILD_TIME
-    git:
-      branch: UI-769-one-click-deploy-to-digital-ocean
-      repo_clone_url: https://github.com/balancer-labs/frontend-v2.git
     image:
-      registry: docker.io
-      registry_type: DOCKER_HUB
-      repository: balancerfi/frontend-v2
-      tag: latest
+      registry_type: DOCR
+      repository: timjrobinson/frontend-v2
     instance_size_slug: basic-xxs
