@@ -16,4 +16,5 @@ spec:
     image:
       registry_type: DOCR
       repository: timjrobinson/frontend-v2
+    dockerfile_path: Dockerfile
     instance_size_slug: basic-xxs
