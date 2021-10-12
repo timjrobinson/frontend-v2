@@ -1,20 +1,28 @@
-name: frontend-v2
-services:
-- envs:
-  - key: INFURA_PROJECT_ID
-    scope: RUN_AND_BUILD_TIME
-  - key: ALCHEMY_KEY
-    scope: RUN_AND_BUILD_TIME
-  - key: BLOCKNATIVE_DAPP_ID
-    scope: RUN_AND_BUILD_TIME
-  http_port: 80
-  image:
-    registry_type: DOCR
-    repository: frontend-v2
-    tag: latest
-  instance_count: 1
-  instance_size_slug: basic-xs
-  name: frontend-v-2
-  routes:
-  - path: /
-  source_dir: /
+spec:
+  alerts:
+  - rule: DEPLOYMENT_FAILED
+  - rule: DOMAIN_FAILED
+  name: frontend-v2
+  region: sgp
+  services:
+  - envs:
+    - key: INFURA_PROJECT_ID
+      scope: RUN_AND_BUILD_TIME
+      value: 6924fc68fbb04a55b83352b5b6be21a7
+    - key: ALCHEMY_KEY
+      scope: RUN_AND_BUILD_TIME
+      value: sM0ldFeoFaDqY4fpdp9qcTPJJGfOZilf
+    - key: BLOCKNATIVE_DAPP_ID
+      scope: RUN_AND_BUILD_TIME
+      value: 64cbc7a6-b1ec-4108-8546-1803a44ee042
+    http_port: 80
+    image:
+      registry_type: DOCR
+      repository: frontend-v2
+      tag: latest
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    name: frontend-v-2
+    routes:
+    - path: /
+    source_dir: /
