@@ -13,8 +13,5 @@ spec:
     git:
       branch: UI-769-one-click-deploy-to-digital-ocean
       repo_clone_url: https://github.com/timjrobinson/frontend-v2.git
-    image:
-      registry_type: DOCR
-      repository: timjrobinson/frontend-v2
     dockerfile_path: Dockerfile
     instance_size_slug: basic-xxs
