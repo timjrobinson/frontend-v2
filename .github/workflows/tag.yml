@@ -8,9 +8,6 @@ on:
     branches:
       - master
 
-env:
-  INPUT_COMMIT-MESSAGE: '^[0-9]+\.[0-9]+\.[0-9]+$' # Ignore bump if one of the new commits is a version bump (e.g. 1.101.0)
-
 jobs:
   build:
     runs-on: ubuntu-latest
