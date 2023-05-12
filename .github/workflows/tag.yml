@@ -14,6 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: 'timjrobinson/gh-action-bump-version@master'
+      env:
+        INPUT_COMMIT-MESSAGE: '^[0-9]+\.[0-9]+\.[0-9]+$' # Ignore bump if one of the new commits is a version bump (e.g. 1.101.0)
     - uses: Klemensas/action-autotag@stable
       with:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
