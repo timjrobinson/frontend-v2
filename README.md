@@ -4,7 +4,7 @@ Official frontend app for the Balancer protocol (v2).
 
 ## Development
 
-To setup the development environment first clone the repo:
+To setup the development environment first clone the repoooo:
 
 ```bash
 git clone https://github.com/balancer/frontend-v2.git && cd frontend-v2
