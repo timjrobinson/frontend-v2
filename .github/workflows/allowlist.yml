@@ -36,7 +36,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node_version: '16'
+          node-version: '16'
       - name: Run allowlist script
         run: npx vite-node ./src/lib/scripts/allowlist-pool.ts -- --network ${{github.event.inputs.network}} --poolType ${{github.event.inputs.poolType}} --poolId \"${{github.event.inputs.poolId}}\"
       - name: Create Pull Request
