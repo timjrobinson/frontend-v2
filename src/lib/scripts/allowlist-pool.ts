@@ -11,14 +11,23 @@ const cli = require('cac')();
 const fs = require('fs');
 const path = require('path');
 
-cli
-  .option('--network <network>', 'Choose a network')
-  .option('--poolType <poolType>', 'Choose a network')
-  .option('--poolId <poolId>', 'Choose a network');
+console.log('Starting script');
 
-const {
-  options: { network, poolType, poolId },
-} = cli.parse();
+let network, poolType, poolId;
+
+try {
+  cli
+    .option('--network <network>', 'Choose a network')
+    .option('--poolType <poolType>', 'Choose a network')
+    .option('--poolId <poolId>', 'Choose a network');
+
+  const result = cli.parse();
+  network = result.options.network;
+  poolType = result.options.poolType;
+  poolId = result.options.poolId;
+} catch (e) {
+  console.error('Cli failed with: ', e);
+}
 
 const _poolId = poolId.replace(/"/g, '');
 
