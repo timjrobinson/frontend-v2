@@ -18,6 +18,8 @@ jobs:
     - uses: 'phips28/gh-action-bump-version@v9.1.3'
       with:
         commit-message: '{{version}}'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - uses: Klemensas/action-autotag@stable
       with:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
