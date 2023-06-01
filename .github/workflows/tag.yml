@@ -23,6 +23,7 @@ jobs:
     - uses: Klemensas/action-autotag@stable
       with:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    - uses: actions/checkout@v3
     - shell: bash
       run: |
         git config --global user.name "GitHub Actions"
