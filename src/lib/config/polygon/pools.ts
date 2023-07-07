@@ -95,6 +95,7 @@ const pools: Pools = {
       '0xe19ed40a47f9b0cea4ca6d372df66107758913ec000000000000000000000b41', // 2brl
       '0xd00f9ca46ce0e4a63067c4657986f0167b0de1e5000000000000000000000b42', // bb-a-weth/frxeth
       '0x8fbd0f8e490735cfc3abf4f29cbddd5c3289b9a7000000000000000000000b5b', // frax/bb-am-usd
+      '0x4adef5ac38546c35dd4dba231284d1b024f7e24c000200000000000000000bca', // Polygonnnn
     ],
   },
   Investment: {
